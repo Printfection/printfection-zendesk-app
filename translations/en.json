@@ -1,0 +1,17 @@
+{
+  "app": {
+    "description":  "Printfection Giveaway Links",
+    "name":         "PF Giveaway Links",
+
+    "parameters": {
+      "pf_api_key": {
+        "label": "Printfection API Key",
+        "helpText": "Located under: Account > API Access"
+      },
+      "pf_campaign_id": {
+        "label": "Giveaway Campaign ID",
+        "helpText": "Right after ?storeid= in the URL. I.e. http://bit.ly/pf_campaign_id"
+      }
+    }
+  }
+}
