@@ -1,4 +1,4 @@
-## Zendesk Application from Printfection to Generate Gift URLs from a Ticket
+## Zendesk App from Printfection to Generate Gift URLs in a Ticket
 
 This Zendesk app allows users to specify their **Printfection API Key** and **Printfection Giveaway Campaign ID** in the app settings. From there Zendesk users can then generate Gift URLs right inside Zendesk tickets. Gift URLs are returned neatly within a lightbox modal where the link can easily be copied.
 
