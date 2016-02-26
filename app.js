@@ -25,14 +25,16 @@
         $button.data('locked', true);
       }
 
-      // We can't do Basic Auth via Zendesk requests API when using {{setting.pf_api_key}}, so doing it old-school
+      // We can't do Basic Auth via the Zendesk `requests` API when using {{setting.pf_api_key}}, so doing it old-school
       var ajax_request = new XMLHttpRequest();
 
       ajax_request.open('POST', 'https://api.printfection.com/v2/orders/', true);
       ajax_request.setRequestHeader('Authorization', 'Basic ' + btoa(this.settings.pf_api_key + ':'));
       ajax_request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       ajax_request.onreadystatechange = function() {
-        console.log(ajax_request.readyState, ajax_request.status, ajax_request.responseText);
+        // Quick way to verify ajax state, status, and response
+        // console.log(ajax_request.readyState, ajax_request.status, ajax_request.responseText);
+
         if (ajax_request.readyState != 4) return;
         if (ajax_request.status === 200) {
           var data = JSON.parse(ajax_request.responseText);
@@ -53,7 +55,7 @@
     },
 
     showGiftCode: function(data) {
-      //Grab the data and throw it into our nice boostrap modal, then show that modal
+      // Grab the data and throw it into our nice boostrap modal, then show that modal
       var pf_gift_url = data.url;
       var $gift_modal = this.$("#js-gift-modal");
       var $gift_code_input = this.$("#js-gift-code-input");
