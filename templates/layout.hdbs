@@ -2,7 +2,20 @@
   <span class="logo"/>
   <h3>Printfection</h3>
 </header>
+
 <section class="wrap">
-  <button class="pf-button" id="js-zapier-hook">Add a Gift URL to this Ticket</button>
+  <button class="pf-button" id="js-gift-hook">Get a New Gift URL</button>
 </section>
 
+<div id="js-gift-modal" class="modal gift hide fade">
+  <div class="modal-header">
+   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+   <h3>Here's Your New Gift URL:</h3>
+  </div>
+  <div class="modal-body">
+   <input type="text" class="gift-code" name="js-gift-code-input" id="js-gift-code-input"/>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>

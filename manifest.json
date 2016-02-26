@@ -4,24 +4,21 @@
     "name": "Printfection",
     "email": "support@printfection.com"
   },
-
   "defaultLocale": "en",
   "private": true,
   "location": ["ticket_sidebar"],
   "frameworkVersion": "1.0",
   "version": "0.1",
-
   "parameters": [
     {
-      "name"     : "pf_api_key",
-      "type"     : "text",
-      "secure"   : true,
-      "required" : true
+      "name": "pf_api_key",
+      "type": "text",
+      "required": true
     },
     {
-      "name"     : "pf_campaign_id",
-      "type"     : "number",
-      "required" : true
+      "name": "pf_campaign_id",
+      "type": "number",
+      "required": true
     }
   ]
 }

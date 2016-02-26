@@ -5,7 +5,7 @@ section.wrap {
 
 .pf-button {
   display: inline-block;
-  padding: 8px 20px;
+  padding: 8px 32px;
   border-radius: 35px;
   background-color: #1e6ca3;
   border: 2px solid #1e6ca3;
@@ -22,4 +22,19 @@ section.wrap {
 .pf-button:active {
   background-color: #125381;
   box-shadow: 0 0 8px rgba(0,0,0,.32);
+}
+
+div.modal.gift input.gift-code {
+  display: block;
+  width: 92%;
+  padding: 6px 10px;
+  margin: 15px auto;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+div.modal.gift input.gift-code:focus {
+  background-color: #f4f4f4 !important;
 }
