@@ -2,10 +2,11 @@
   "name": "Printfection Giveaway Links",
   "author": {
     "name": "Printfection",
-    "email": "support@printfection.com"
+    "email": "support@printfection.com",
+    "url": "http://www.printfection.com"
   },
   "defaultLocale": "en",
-  "private": true,
+  "private": false,
   "location": ["ticket_sidebar"],
   "frameworkVersion": "1.0",
   "version": "0.1",

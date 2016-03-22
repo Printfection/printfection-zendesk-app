@@ -32,9 +32,8 @@
       ajax_request.setRequestHeader('Authorization', 'Basic ' + btoa(this.settings.pf_api_key + ':'));
       ajax_request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       ajax_request.onreadystatechange = function() {
-        // Quick way to verify ajax state, status, and response
-        // console.log(ajax_request.readyState, ajax_request.status, ajax_request.responseText);
 
+        // Quick way to verify ajax state, status, and response
         if (ajax_request.readyState != 4) return;
         if (ajax_request.status === 200) {
           var data = JSON.parse(ajax_request.responseText);
