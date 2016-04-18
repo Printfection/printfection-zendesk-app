@@ -4,7 +4,7 @@ This Zendesk app allows users to specify their **Printfection API Key** and **Pr
 
 ### Installation
 
-1. Within Zendesk go to **Settings > Apps > Manage** and choose the [**Upload Private App**](https://s3.amazonaws.com/f.cl.ly/items/2r1m412I170l3N1d1q2H/Image%202016-02-26%20at%2010.48.09%20AM.png?v=47e88612) option in the top right.
+1. Within Zendesk go to **Settings > Apps > Manage** and choose the [**Upload Private App**](https://s3.amazonaws.com/f.cl.ly/items/2r1m412I170l3N1d1q2H/Image%202016-02-26%20at%2010.48.09%20AM.png?v=47e88612) option in the top right. Use the downloaded Zip of this repository as your upload.
 
 2. Once uplaoded, in the [**App Configuration**](https://s3.amazonaws.com/f.cl.ly/items/3616271W0A0g0T1I240n/Image%202016-02-26%20at%2010.56.17%20AM.png?v=91946f530) tab input your [_Printfection API Key_](https://s3.amazonaws.com/f.cl.ly/items/2B472a0f321Q3t0w3g36/Image%202016-02-26%20at%2010.53.18%20AM.png?v=ba222695) (located in Printfection at **Account > API Access**) and _Giveaway Campaign ID_ (located in the URL bar right after [**?storeid=**](https://s3.amazonaws.com/f.cl.ly/items/0W0r3h1a32260M28132Z/Image%202016-02-26%20at%2010.54.46%20AM.png) inside Printfection).
 
