@@ -4,7 +4,11 @@
 </header>
 
 <section class="wrap">
-  <button class="pf-button" id="js-gift-hook">Get a New Gift URL</button>
+  <h5 class="pf-campaign-label">Choose Giveaway</h5>
+  <select class="pf-campaign" name="campaign" id="js-campaign">
+    <option value="#" id="js-loading-option">Loading campaigns...</option>
+  </select>
+  <button class="pf-button" id="js-gift-hook">Generate New Gift Link</button>
 </section>
 
 <div id="js-gift-modal" class="modal gift hide fade">

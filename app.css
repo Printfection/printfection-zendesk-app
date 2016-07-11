@@ -1,6 +1,21 @@
 section.wrap {
-  padding: 15px 0;
+  padding: 15px 15px;
   text-align: center;
+}
+
+.pf-campaign {
+  width: 100%;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.pf-campaign-label {
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  color: #999;
+  font-weight: normal;
+  text-align: left;
+  padding-left: 10px;
 }
 
 .pf-button {
