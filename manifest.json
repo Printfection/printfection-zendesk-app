@@ -19,7 +19,12 @@
     {
       "name": "pf_campaign_id",
       "type": "number",
-      "required": true
+      "required": false
+    },
+    {
+      "name": "pf_force_campaign",
+      "type": "checkbox",
+      "required": false
     }
   ]
 }

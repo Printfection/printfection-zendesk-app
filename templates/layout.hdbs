@@ -1,25 +1,28 @@
-<header>
-  <span class="logo"/>
-  <h3>Printfection</h3>
-</header>
+<section id="js-pf-app">
+  <header>
+    <span class="logo"/>
+    <h3>Printfection</h3>
+  </header>
 
-<section class="wrap">
-  <h5 class="pf-campaign-label">Choose Giveaway</h5>
-  <select class="pf-campaign" name="campaign" id="js-campaign">
-    <option value="#" id="js-loading-option">Loading campaigns...</option>
-  </select>
-  <button class="pf-button" id="js-gift-hook">Generate New Gift Link</button>
+  <section class="wrap">
+    <h5 class="pf-campaign-label" id="js-campaign-label">Choose Giveaway</h5>
+    <select class="pf-campaign" name="campaign" id="js-campaign">
+      <option value="none" id="js-loading-option">Loading campaigns...</option>
+    </select>
+    <span class="pf-error" style="display:none;">Please Select a Campaign First</span>
+    <button class="pf-button" id="js-gift-hook">Generate New Gift Link</button>
+  </section>
+
+  <div id="js-gift-modal" class="modal gift hide fade">
+    <div class="modal-header">
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+     <h3>Here's Your New Gift URL:</h3>
+    </div>
+    <div class="modal-body">
+     <input type="text" class="gift-code" name="js-gift-code-input" id="js-gift-code-input"/>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+  </div>
 </section>
-
-<div id="js-gift-modal" class="modal gift hide fade">
-  <div class="modal-header">
-   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-   <h3>Here's Your New Gift URL:</h3>
-  </div>
-  <div class="modal-body">
-   <input type="text" class="gift-code" name="js-gift-code-input" id="js-gift-code-input"/>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-  </div>
-</div>

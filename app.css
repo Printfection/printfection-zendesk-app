@@ -9,13 +9,25 @@ section.wrap {
   margin-bottom: 25px;
 }
 
+.pf-campaign.error {
+  border-color: #9d261d;
+  color: #9d261d;
+}
+
+.pf-error {
+  display: block;
+  color: #9d261d;
+  margin-top: -15px;
+  margin-bottom: 15px;
+}
+
 .pf-campaign-label {
   padding-bottom: 5px;
   text-transform: uppercase;
   color: #999;
   font-weight: normal;
   text-align: left;
-  padding-left: 10px;
+  padding-left: 8px;
 }
 
 .pf-button {

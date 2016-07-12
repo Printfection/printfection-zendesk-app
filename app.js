@@ -20,6 +20,16 @@
     getCampaigns: function() {
       var self = this;
       var $button = this.$("button#js-gift-hook");
+      var $select_campaign = this.$("select#js-campaign");
+      var $select_label = this.$("#js-campaign-label");
+
+      // If the user wants to force just one campaign (via settings) set that campaign and return
+      if (this.settings.pf_force_campaign) {
+        self.selected_campaign = this.settings.pf_campaign_id;
+        $select_campaign.hide();
+        $select_label.hide();
+        return;
+      }
 
       // We can't do Basic Auth via the Zendesk `requests` API when using {{setting.pf_api_key}}, so doing it old-school
       var ajax_request = new XMLHttpRequest();
@@ -49,9 +59,12 @@
       var $select_campaign = this.$("select#js-campaign");
       var $select_campaign_option = this.$("select#js-loading-option");
       var $button = this.$("button#js-gift-hook");
+      var $loading_option = this.$("#js-loading-option");
+      var $choose_error = this.$("span.pf-error");
 
-      this.$("#js-loading-option").text('Select a campaign...');
+      $loading_option.text('Select a campaign...');
 
+      // Map all campaigns to our select options for user selection
       campaigns.data.forEach(function(campaign) {
         if (
           (campaign.active == true) &&
@@ -61,9 +74,17 @@
         };
       });
 
+      // If the default campaign is specified in our settigns, automatically select it
+      if (this.settings.pf_campaign_id) {
+        var $select_campaign = this.$("select#js-campaign option[value=" + this.settings.pf_campaign_id + "]").attr('selected',true);
+      };
+
+      // When campaign is changed allow the user to generate another link
       $select_campaign.change(function(event) {
         self.selected_campaign = $select_campaign.val();
         self.order_data = null;
+        $select_campaign.removeClass("error");
+        $choose_error.hide();
         $button.html('Generate New Gift Link');
       });
     },
@@ -71,6 +92,8 @@
     getGift: function () {
       var self = this;
       var $button = this.$("button#js-gift-hook");
+      var $select_campaign = this.$("select#js-campaign");
+      var $choose_error = this.$("span.pf-error");
 
       // If the button is locked, it means a request is currently underway so stop here and continue to wait.
       // Otherwise, lock the button and continue to perform the ajax request.
@@ -78,6 +101,19 @@
         return;
       } else {
         $button.data('locked', true);
+      }
+
+      // If the user isn't forcing a campaign let's make sure they then select one
+      if (!this.settings.pf_force_campaign) {
+        if ($select_campaign.val() == "none") {
+          $select_campaign.addClass("error");
+          $choose_error.show();
+          $button.data('locked', false);
+          return;
+        } else {
+          $select_campaign.removeClass("error");
+          $choose_error.hide();
+        }
       }
 
       // We can't do Basic Auth via the Zendesk `requests` API when using {{setting.pf_api_key}}, so doing it old-school
@@ -92,7 +128,7 @@
         if (ajax_request.status === 200) {
           var order_data = JSON.parse(ajax_request.responseText);
 
-          $button.html("Show Gift Link");
+          $button.html("Show Your Gift Link");
           $button.data('locked', false); // Unlock the button
 
           // Assign the ajax return data to the `null` placeholder we created above
