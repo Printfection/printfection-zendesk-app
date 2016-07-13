@@ -67,17 +67,17 @@
       // Map all campaigns to our select options for user selection
       campaigns.data.forEach(function(campaign) {
         if (
-          (campaign.active == true) &&
+          (campaign.active === true) &&
           (campaign.type == "giveaway" || campaign.type == "socialgiveaway")
         ) {
           $select_campaign.append('<option value="' + campaign.id + '">' + campaign.name + '</option>');
-        };
+        }
       });
 
       // If the default campaign is specified in our settigns, automatically select it
       if (this.settings.pf_campaign_id) {
-        var $select_campaign = this.$("select#js-campaign option[value=" + this.settings.pf_campaign_id + "]").attr('selected',true);
-      };
+        $select_campaign = this.$("select#js-campaign option[value=" + this.settings.pf_campaign_id + "]").attr('selected',true);
+      }
 
       // When campaign is changed allow the user to generate another link
       $select_campaign.change(function(event) {

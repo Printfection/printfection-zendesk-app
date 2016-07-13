@@ -9,12 +9,12 @@
         "helpText": "Located under: Account > API Access"
       },
       "pf_campaign_id": {
-        "label": "Default Giveaway Campaign ID",
-        "helpText": "Specify a campaign to be selected by default. The campaign ID is located on your campaign settings page."
+        "label": "Default Campaign ID",
+        "helpText": "Specify a Giveaway campaign to be selected by default. The ID is located on your campaign settings page."
       },
       "pf_force_campaign": {
         "label": "Force Specific Campaign?",
-        "helpText": "Only allows Gift links from the specified campaign above."
+        "helpText": "Only allows Gift links to be created from the specified campaign above."
       }
     }
   }
