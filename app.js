@@ -5,7 +5,7 @@
     selected_campaign: null, // Placeholder for choosen camapign
 
     events: {
-      'app.activated': 'getCampaigns',
+      'app.created': 'getCampaigns',
       'click #js-gift-hook' : function(event) {
         event.preventDefault();
 
@@ -25,9 +25,9 @@
 
       // If the user wants to force just one campaign (via settings) set that campaign and return
       if (this.settings.pf_force_campaign) {
-        self.selected_campaign = this.settings.pf_campaign_id;
         $select_campaign.hide();
         $select_label.hide();
+        self.selected_campaign = this.settings.pf_campaign_id;
         return;
       }
 
@@ -57,26 +57,26 @@
       var self = this;
       var campaigns = self.campaign_data;
       var $select_campaign = this.$("select#js-campaign");
-      var $select_campaign_option = this.$("select#js-loading-option");
       var $button = this.$("button#js-gift-hook");
       var $loading_option = this.$("#js-loading-option");
       var $choose_error = this.$("span.pf-error");
 
-      $loading_option.text('Select a campaign...');
-
       // Map all campaigns to our select options for user selection
       campaigns.data.forEach(function(campaign) {
-        if (
-          (campaign.active === true) &&
-          (campaign.type == "giveaway" || campaign.type == "socialgiveaway")
-        ) {
+        if ((campaign.active === true) && (campaign.type == "giveaway")) {
           $select_campaign.append('<option value="' + campaign.id + '">' + campaign.name + '</option>');
         }
       });
 
+      $loading_option.text('Select a campaign...');
+
       // If the default campaign is specified in our settigns, automatically select it
       if (this.settings.pf_campaign_id) {
-        $select_campaign = this.$("select#js-campaign option[value=" + this.settings.pf_campaign_id + "]").attr('selected',true);
+        // Set the app campaign ID from settings
+        self.selected_campaign = this.settings.pf_campaign_id;
+
+        // Select the campaign
+        this.$("select#js-campaign option[value=" + this.settings.pf_campaign_id + "]").attr('selected',true);
       }
 
       // When campaign is changed allow the user to generate another link
